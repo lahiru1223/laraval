@@ -1,3 +1,7 @@
+
+
+
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -11,7 +15,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('parking', function (Blueprint $table) {
+        Schema::create('parkings', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('parking_spot_id')->constrained()->onDelete('cascade');
