@@ -22,3 +22,4 @@ Route::delete('delete-parking',[ParkingController::class,'deletePark']);
 
 Route::get('allParkingSpots',[ParkingController::class,'spots']);
 
+Route::get('/allParkingSpots/{id}',[ParkingController::class,'spots']);

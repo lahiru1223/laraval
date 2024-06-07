@@ -13,7 +13,7 @@ class ParkingController extends Controller
 {
 
     public function park(Request $request){
-        
+
         $saveData = (new ParkingService)->newParking($request);
        // throw new RuntimeException('Test Error');
         return response()->json(['Status'=>'Successful']);
@@ -36,8 +36,16 @@ class ParkingController extends Controller
         return response()->json($items);
     }
 
-    public function spots(Request $request){
-        $items = parkingSpots::all();
-        return response()->json($items);        
+    public function spots($id = null){
+        // $items = parkingSpots::all();
+        // return response()->json($items);
+        if($id){
+            $items = parkingSpots::findOrFail(1);
+        }else{
+            $items = parkingSpots::all();
+        }   
+        
+        return response()->json($items);
     }    
+
 }
