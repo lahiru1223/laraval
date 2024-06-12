@@ -46,6 +46,6 @@ class ParkingController extends Controller
         }   
         
         return response()->json($items);
-    }    
-
+    }  
+    
 }
