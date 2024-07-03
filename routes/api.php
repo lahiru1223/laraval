@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ParkingController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\FilterController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +27,7 @@ Route::get('allParkingSpots',[ParkingController::class,'spots']);
 Route::get('/allParkingSpots/{id}',[ParkingController::class,'spots']);
 
 Route::post('booking', [BookingController::class, 'book']);
+
+Route::delete('DeleBooking', [BookingController::class, 'deleteBook']);
+
+Route::get('filterData',[FilterController::class,'filterData']);

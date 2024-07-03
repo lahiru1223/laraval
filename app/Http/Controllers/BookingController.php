@@ -55,6 +55,10 @@ class BookingController extends Controller
         ]);
 
         return response()->json($booking, 200);
-    }    
-
+    } 
+    
+    public function deleteBook(Request $request){
+        $items = Booking::findorfail($request->id)->delete();
+        return response()->json(['Status'=>'Delete Successful']);  
+    }
 }
